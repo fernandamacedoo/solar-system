@@ -16,7 +16,7 @@ class Missions extends React.Component {
 
   goLeft() {
     if (this.x>= 0) {
-      this.slider.current.scrollTo(this.x - 100, 0);
+      this.slider.current.scrollTo(this.x - 10, 0);
     } else {
       this.slider.current.scrollTo(0, 0);
     }
@@ -24,7 +24,7 @@ class Missions extends React.Component {
 
   goRight() {
     if (this.x <= 4800) {
-      this.slider.current.scrollTo(this.x + 100, 0);
+      this.slider.current.scrollTo(this.x + 10, 0);
     } else {
       this.slider.current.scrollTo(4800, 0);
     }
@@ -42,7 +42,7 @@ class Missions extends React.Component {
         <div className="flex">
           <button 
           className={`${this.state.arrowLeft ? 'rounded-full bg-slate-500 h-16 self-center w-16 opacity-70' : 'opacity-0'}`}  
-          onClick={()=> this.goLeft()} 
+          onMouseMoveCapture={()=> this.goLeft()} 
           // className="rounded-full bg-slate-500 h-16 self-center w-16 opacity-70"
           >
             <img className="w-12" src="https://d29fhpw069ctt2.cloudfront.net/icon/image/39092/preview.png" alt="arrow-left" />
@@ -63,7 +63,7 @@ class Missions extends React.Component {
           </div>
           <button 
             className={`${this.state.arrowRight ? 'rounded-full bg-slate-500 h-16 w-16 self-center opacity-70' : 'opacity-0'}`} 
-            onClick={()=> this.goRight()} 
+            onMouseMoveCapture={()=> this.goRight()}             
           >
             <img className="w-12 m-2" src="https://d29fhpw069ctt2.cloudfront.net/icon/image/39093/preview.png" alt="arrow-left" />
           </button>

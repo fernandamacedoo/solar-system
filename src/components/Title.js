@@ -5,7 +5,7 @@ class Title extends React.Component {
   render() {
     const { headline } = this.props;
     return (
-      <h2 className="grid place-items-center">
+      <h2 className="grid place-items-center text-2xl">
         { headline }
       </h2>
     );
