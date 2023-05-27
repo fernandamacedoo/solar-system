@@ -15,7 +15,7 @@ class Missions extends React.Component {
   }
 
   goLeft() {
-    if (this.x - 960 >= 0) {
+    if (this.x>= 0) {
       this.slider.current.scrollTo(this.x - 100, 0);
     } else {
       this.slider.current.scrollTo(0, 0);
@@ -23,7 +23,7 @@ class Missions extends React.Component {
   }
 
   goRight() {
-    if (this.x + 960 <= 4800) {
+    if (this.x <= 4800) {
       this.slider.current.scrollTo(this.x + 100, 0);
     } else {
       this.slider.current.scrollTo(4800, 0);
@@ -41,13 +41,13 @@ class Missions extends React.Component {
         <Title headline="Missões" />
         <div className="flex">
           <button 
-          style={{visibility: `${this.state.arrowLeft ? 'visible' : 'hidden'}`}}  
+          className={`${this.state.arrowLeft ? 'rounded-full bg-slate-500 h-16 self-center w-16 opacity-70' : 'opacity-0'}`}  
           onClick={()=> this.goLeft()} 
-          className="rounded-full bg-slate-500 h-16 self-center w-16"
+          // className="rounded-full bg-slate-500 h-16 self-center w-16 opacity-70"
           >
-            esquerda
+            <img className="w-12" src="https://d29fhpw069ctt2.cloudfront.net/icon/image/39092/preview.png" alt="arrow-left" />
           </button>
-          <div ref={this.slider} onScroll={()=> this.onSlide()} className="flex h-64 relative w-full overflow-hidden after:clear-both after:block after:content-[''] transition-all" data-testid="missions">
+          <div ref={this.slider} onScroll={()=> this.onSlide()} className="flex h-64 w-full overflow-hidden after:clear-both after:block after:content-[''] transition-all" data-testid="missions">
             {
               missions.map((mission) => (
                 <MissionCard className=""
@@ -62,12 +62,10 @@ class Missions extends React.Component {
 
           </div>
           <button 
-            style={{visibility: `${this.state.arrowRight ? 'visible' : 'hidden'}`}} 
+            className={`${this.state.arrowRight ? 'rounded-full bg-slate-500 h-16 w-16 self-center opacity-70' : 'opacity-0'}`} 
             onClick={()=> this.goRight()} 
-            className="rounded-full bg-slate-500 h-16 w-16 self-center"
           >
-            direita
-            {/* <img src="./images/right-arrow.png" alt="button-right"/> */}
+            <img className="w-12 m-2" src="https://d29fhpw069ctt2.cloudfront.net/icon/image/39093/preview.png" alt="arrow-left" />
           </button>
         </div>
       </>
