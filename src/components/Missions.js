@@ -37,7 +37,7 @@ class Missions extends React.Component {
   }
   render() {
     return (
-      <>
+      <div className="mt-10">
         <Title headline="Missões" />
         <div className="flex">
           <button 
@@ -63,12 +63,12 @@ class Missions extends React.Component {
           </div>
           <button 
             className={`${this.state.arrowRight ? 'rounded-full bg-slate-500 h-16 w-16 self-center opacity-70' : 'opacity-0'}`} 
-            onMouseMoveCapture={()=> this.goRight()}             
+            onMouseMoveCapture={()=> this.goRight()}            
           >
             <img className="w-12 m-2" src="https://d29fhpw069ctt2.cloudfront.net/icon/image/39093/preview.png" alt="arrow-left" />
           </button>
         </div>
-      </>
+      </div>
     );
   }
 }
